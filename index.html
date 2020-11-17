@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>JS Bin</title>
+    <style>
+        body {
+            padding-top: 50px
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="txtValue" />
+    <input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();" />
+    <input type="button" id="btnDisplay" value="Display" onclick="display_array();" />
+    <div id="result"></div>
+    <script>
+        let x = 0;
+        let array = Array();
+        let content = "<hr>";
+       function add_element_to_array(){
+           //arr[0 ] se la gia tri dau tien cua mang
+           array[x] = document.getElementById("txtValue").value;
+
+           alert("Element " + array[x] +" add to the array index:" + x)
+           // x tang dan khi click => array[x] thay doi
+           x++;
+           //reset lai value moi khi duoc click
+           document.getElementById("txtValue").value = "";
+       }
+       function display_array(){
+           for(i=0; i<array.length;i++){
+             content = content + "Element " + i + " la : " +array[i] +"<br>";
+
+           }
+           document.getElementById("result").innerHTML = content;
+       }
+    </script>
+</body>
+
+</html>
